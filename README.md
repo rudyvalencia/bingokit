@@ -13,7 +13,7 @@ other bingo games where monetary consideration or prizes apply.
 
 ## Contributing to BingoKit
 
-Request an invitation to this repository via GitHub or [join the Discord]: https://discord.gg/jVzqn86GdP and hang out in **#bingokit**.
+Request an invitation to this repository via GitHub or [join the Discord](https://discord.gg/jVzqn86GdP) and hang out in **#bingokit**.
 
 ## Licensing
 
