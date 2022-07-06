@@ -1,0 +1,14 @@
+#!/bin/bash
+# BingoKit
+# (C) 2022 the BingoKit authors.
+# Please see the README.md and LICENSE files for more information.
+
+source ./config
+
+echo -n "$(basename $0): "
+
+if [ -f $output ]; then
+	rm -v $output;
+else
+	echo "nothing to clean"
+fi

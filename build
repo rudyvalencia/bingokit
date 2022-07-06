@@ -1,0 +1,32 @@
+#!/bin/bash
+# BingoKit
+# (C) 2022 the BingoKit authors.
+# Please see the README.md and LICENSE files for more information.
+
+source ./config
+opts=""
+
+while getopts 'dwh:' flag; do
+    case "$flag" in
+        d)
+			opts+="-d "
+			;;
+        w)
+			opts+="-W -Wall -Wextra ";;
+		h)
+			echo "usage: $(basename $0) [-d] [-w]" >&2
+			exit 1
+			;;
+    esac
+done
+
+if [ -d $outputdir ]; then mkdir $outputdir; fi
+
+if [ -f $output ]; then rm $output; fi
+
+clang++ $opts$input -o $output
+
+if [ -f $output ]; then
+	echo "$(basename $0): completed successfully."
+	echo "Run the output directly at $output or run the helper script ./bingo to test."
+fi

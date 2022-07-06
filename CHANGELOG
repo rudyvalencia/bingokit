@@ -1,0 +1,7 @@
+r1:
+ * Rewrote Card class and clarified variable names.
+ * Added support to request a specific face number as a parameter.
+ * Card::pretty_print() uses line-drawing characters instead of ASCII.
+ * Build script deletes the last build before building.
+ * Helper script passes requested card parameter to binary.
+

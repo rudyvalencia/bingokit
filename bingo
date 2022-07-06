@@ -1,0 +1,17 @@
+#!/bin/bash
+# BingoKit
+# (C) 2022 the BingoKit authors.
+# Please see the README.md and LICENSE files for more information.
+
+source ./config
+
+if [ ! -f $output ]; then
+	echo "$(basename $0): run ./build to build the binary"
+	exit 1
+fi
+
+if [ "$#" -eq 1 ]; then
+	exec $output $1
+else
+	exec $output
+fi

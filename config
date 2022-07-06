@@ -1,0 +1,29 @@
+#!/bin/bash
+# BingoKit
+# (C) 2022 the BingoKit authors.
+# Please see the README.md and LICENSE files for more information.
+
+export input="src/bingo.cpp"
+
+unameOut="$(uname -s)"
+case "${unameOut}" in
+    Linux*)     os="linux";;
+    Darwin*)    os="macos";;
+    CYGWIN*)    os="windows";;
+    MINGW*)     os="windows";;
+    MSYS*)      os="windows";;
+    *)          os="${unameOut}"
+esac
+
+export outputdir="bin"
+
+if [ $os = "windows" ]; then
+	export output="$outputdir/bingo.exe"
+else
+	export output="$outputdir/bingo"
+fi
+
+if [ ! -d $outputdir ]; then
+	echo "Creating output directory $outputdir..."
+	mkdir $outputdir
+fi
